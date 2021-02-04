@@ -68,7 +68,7 @@ input[type=submit]:hover {
 
 <h3 style="text-align: center;"> Add Category Here</h3><br>
 
-<div class="container">
+<div class="container" style="width: 60%;">
   <form action="" method="POST">
     <label for="category">Category</label><br>
     <input type="text" id="category" name="category" placeholder="" required>

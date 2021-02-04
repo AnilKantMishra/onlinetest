@@ -50,13 +50,10 @@ body{
 
 <tr style="font-size: 20px;">
 
-<th>Category</th>
- <th>Question</th>
- <th>Answer</th> 
-<th>Option1 </th>
-<th>Option2</th>
- <th>Option3</th> 
- <th>Option4</th>  
+<th>Name</th>
+ <th>Email</th>
+ <th>Password</th> 
+
 
 
 
@@ -72,7 +69,7 @@ body{
 
 
 $addcat = new admin();
-$res = $addcat->seequestion();
+$res = $addcat->seeuser();
 
 
 
@@ -82,13 +79,10 @@ $res = $addcat->seequestion();
 while($s=mysqli_fetch_array($res)){
 ?>
 <tr>
-<th style="font-size: 13px;"><?php echo $s['cat_name'];?></th>
-<th style="font-size: 13px;"><?php echo $s['question'];?></th>
-<th style="font-size: 13px;"><?php echo $s['answer'];?></th>
-<th style="font-size: 13px;"><?php echo $s['Option1'];?></th>
-<th style="font-size: 13px;"><?php echo $s['Option2'];?></th>
-<th style="font-size: 13px;"><?php echo $s['Option3'];?></th>
-<th style="font-size: 13px;"><?php echo $s['Option4'];?></th>
+<th style="font-size: 13px;"><?php echo $s['name'];?></th>
+<th style="font-size: 13px;"><?php echo $s['email'];?></th>
+<th style="font-size: 13px;"><?php echo $s['password'];?></th>
+
 
 
 </tr>

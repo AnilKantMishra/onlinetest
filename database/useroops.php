@@ -65,7 +65,9 @@ class user
                             $sql = "SELECT * FROM `tbl_question` WHERE cat_id='$id' ORDER BY RAND() LIMIT 10";
                             $result = $this->con->query($sql);
                             if($result->num_rows>0){
-                                return $result;
+                                if($result->num_rows<10){ return 1;}
+                                else{
+                                return $result;}
                             }else{
                                 return false;
                             }
@@ -89,7 +91,7 @@ class user
                         }
 }
 // $con=new user();
-// echo $con->answermatch(1);
+// print_r($con->questionshow(12);
 
 ?>
 

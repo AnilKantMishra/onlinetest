@@ -12,11 +12,22 @@ if(isset($_POST['submit'])){
  $Option3 = $_POST['option3'];
  $Option4 = $_POST['option4'];
 
-$userlogin = new admin();
-$res = $userlogin->addquestion(  $selectcat,$Question,$Answer,$Option1,$Option2,$Option3,$Option4);
+//  echo "<br>".$selectcat;
+//  echo "<br>".$Question;
+//  echo "<br>".$Answer;
+//  echo "<br>".$Option1;
+//  echo "<br>".$Option2;
+//  echo "<br>".$Option3;
+//  echo "<br>".$Option4;
 
-
-
+$insertques = new admin();
+$res = $insertques->addquestion($selectcat,$Question,$Answer,$Option1,$Option2,$Option3,$Option4);
+if($res==1){
+  echo "<script>   alert('Question Added Successfully')      </script>";
+}
+else{
+  echo "<script>   alert('Sorry!!!!!!!Question not inserted')      </script>";
+}
 }
 ?>
 
@@ -26,7 +37,8 @@ $res = $userlogin->addquestion(  $selectcat,$Question,$Answer,$Option1,$Option2,
 <head>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+* {box-sizing: border-box;
+;}
 select {
 
 -moz-appearance: none;
@@ -86,7 +98,7 @@ input[type=submit]:hover {
 
 <h3 style="text-align: center;"> Add Question Here</h3><br>
 
-<div class="container">
+<div class="container"style="width:60%;">
   <form action="" method="POST">
   <label for="category">Category</label><br>
   <select class="form-dropdown validate (required)" 

@@ -7,7 +7,7 @@ if(!isset($_SESSION['name'])||$_SESSION['is_admin']=="0"){
 
 
 ?>
-<nav class="navbar navbar-inverse"style="padding:15px;font-size:17px;">
+<nav class="navbar navbar-inverse"style="padding:15px;font-size:14px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#" style="color:white">CED QUIZ</a>
@@ -18,6 +18,7 @@ if(!isset($_SESSION['name'])||$_SESSION['is_admin']=="0"){
       <li><a href="createcategory.php" style="color:white">CREATE CATEGORY</a></li>
       <li><a href="createquestion.php"style="color:white">CREATE QUESTION</a></li>
       <li><a href="seequestion.php"style="color:white">SEE QUESTION</a></li>
+      <li><a href="seeuser.php"style="color:white">SEE USER LIST</a></li>
    
       
 <li class="dropdown"> 

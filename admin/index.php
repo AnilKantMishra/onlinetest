@@ -55,7 +55,12 @@ session_start();
 <a href="seequestion.php" target="_blank" style="color:white; text-decoration:none;">See Questions </a>
 </button>
 <br><br>
+<button type="button" class="btn btn-lg btn-primary " style="width: 20%;margin-left:200px ">
 
+
+
+<a href="seeuser.php" target="_blank" style="color:white; text-decoration:none;">See User Details </a>
+</button>
 </div><br>
 
 

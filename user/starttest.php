@@ -23,7 +23,7 @@ $res = $userlogin->questionshow($id);
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+<script src="jquery-3.5.1.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 
 <style>
@@ -122,7 +122,10 @@ $userlogin = new user();
                           
 
 $result = $userlogin->questionshow($id);
-
+if($result=="1"){
+  echo "<script>  alert('Currently The Quiz is not available!!!')</script>";
+  echo "<script>  window.location.href='index.php'</script>";
+}else{
 $row1 = $result->num_rows;
 $_SESSION['questionrow']  = $row1;
 
@@ -133,21 +136,21 @@ echo '
 
 <div class="tab">
 
-<h3>'.$row['question'].'</h3>
-<input  type="radio" name="'.$row['id'].'" value=" '.$row['Option1'].'"required
+<h3>'  .$row['question'].'</h3>
+<input  type="radio" id="#txtInput" name="'.$row['id'].'" value=" '.$row['Option1'].'"required
 >&nbsp; '.$row['Option1'].'<br>
-<input  type="radio" name="'.$row['id'].'" value=" '.$row['Option2'].'"required>&nbsp; '.$row['Option2'].'<br>
-<input  type="radio" name="'.$row['id'].'" value=" '.$row['Option3'].'"required>&nbsp; '.$row['Option3'].'<br>
-<input  type="radio" name="'.$row['id'].'" value=" '.$row['Option4'].'"required>&nbsp; '.$row['Option4'].'<br>
+<input  type="radio" id="#txtInput" name="'.$row['id'].'" value=" '.$row['Option2'].'"required>&nbsp; '.$row['Option2'].'<br>
+<input  type="radio" id="#txtInput" name="'.$row['id'].'" value=" '.$row['Option3'].'"required>&nbsp; '.$row['Option3'].'<br>
+<input  type="radio" id="#txtInput" name="'.$row['id'].'" value=" '.$row['Option4'].'"required>&nbsp; '.$row['Option4'].'<br>
 
 
 
 
 </div>
 </div>
-    ';}
+    ';}}
 ?>
-   <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+  <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
  <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
 <div style="overflow:auto;">
  <div style="float:right;">
@@ -287,8 +290,28 @@ countdown(5);
 
 
 
+$(document).ready(function(){
+      $('#txtInput').bind("cut copy paste",function(e) {
+          e.preventDefault();
+      });
+    });
 
 
+
+jQuery('input.disablePaste').keydown(function(event) {
+    var forbiddenKeys = new Array('c', 'x', 'v');
+    var keyCode = (event.keyCode) ? event.keyCode : event.which;
+    var isCtrl;
+    isCtrl = event.ctrlKey
+    if (isCtrl) {
+        for (i = 0; i < forbiddenKeys.length; i++) {
+            if (forbiddenKeys[i] == String.fromCharCode(keyCode).toLowerCase()) {
+                 return false;
+            }
+        }
+    }
+    return true;
+});
 
  </script>
 <?php include '../footer.php';?>

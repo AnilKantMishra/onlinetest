@@ -12,18 +12,17 @@ class admin
                     $this->con=$dbcon->createConnection();
 
                     }
-
-
-                public function addquestion(  $selectcat,$Question,$Answer,$Option1,$Option2,$Option3,$Option4)
+                   
+                public function addquestion($selectcat,$Question,$Answer,$Option1,$Option2,$Option3,$Option4)
                     {
-                            $sql= "INSERT INTO `tbl_question`(`cat_id`,`question`, `answer`, `Option1`, `Option2`, `Option3`, `Option4`) 
-                            VALUES (' $selectcat','$Question','$Answer','$Option1','$Option2','$Option3','$Option4')"
-                             ;
-                            if ($this->con->query($sql)) {
-                            echo 'Inserted successfully';
+                            $sql1= "INSERT INTO `tbl_question`(`cat_id`,`question`, `answer`, `Option1`, `Option2`, `Option3`, `Option4`) 
+                            VALUES ('$selectcat','$Question','$Answer','$Option1','$Option2','$Option3','$Option4')";
+                            if ($this->con->query($sql1)) 
+                            {
+                            return 1;
                             }
                             else{
-                            echo 'Not inserted';
+                            return 0;
                             }
 
                     }
@@ -44,6 +43,17 @@ class admin
                      public function nav()
                      {
                          $sql = "SELECT * FROM `tbl_category` ";
+                 
+                         $result = $this->con->query($sql);
+                        if($result->num_rows>0){
+                            return $result;
+                        }else{
+                            return false;
+                        }
+                     }  
+                     public function seeuser()
+                     {
+                         $sql = "SELECT name,email,password FROM `tbl_user` WHERE is_admin=0 ";
                  
                          $result = $this->con->query($sql);
                         if($result->num_rows>0){
@@ -79,7 +89,8 @@ class admin
 
 
 }
-
+// $obj1= new admin();
+// echo $obj1->addquestion(3,"?","1111","fjsdhfjidhfu","sdfds","fhdgfhdgf","hdhgfhdghd");
 ?>
 
 
