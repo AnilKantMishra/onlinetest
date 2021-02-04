@@ -40,8 +40,8 @@ $count=0;
 include_once '../database/useroops.php';
 $score = new user();
   
-  //  echo "<pre>";
-  //  print_r($_REQUEST);
+   echo "<pre>";
+   print_r($_REQUEST);
 
 foreach($_REQUEST as $key=>$value){
 

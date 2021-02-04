@@ -106,7 +106,9 @@ background-color: #4CAF50;
 }
 </style>
 <?php include 'userheader.php';?>
-<body>
+<body oncontextmenu="alert('You are trying to cheat here!');return false;"
+onkeypress="alert('You are trying to cheat!');return false;"
+oncopy="{return alert('You are trying to copy !!');}" onpaste="{return alert('You are trying to cheat here!');}">
 <div class="container">
 <u><h1> <?php echo $catname." "." "  ?> Quiz Start HERE:</h1></u>
 
@@ -290,28 +292,18 @@ countdown(5);
 
 
 
-$(document).ready(function(){
-      $('#txtInput').bind("cut copy paste",function(e) {
-          e.preventDefault();
-      });
-    });
-
-
-
-jQuery('input.disablePaste').keydown(function(event) {
-    var forbiddenKeys = new Array('c', 'x', 'v');
-    var keyCode = (event.keyCode) ? event.keyCode : event.which;
-    var isCtrl;
-    isCtrl = event.ctrlKey
-    if (isCtrl) {
-        for (i = 0; i < forbiddenKeys.length; i++) {
-            if (forbiddenKeys[i] == String.fromCharCode(keyCode).toLowerCase()) {
-                 return false;
-            }
-        }
-    }
-    return true;
+$(document).keydown(function(event) {
+  if (event.keyCode == 123) {
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    return false;
+  }
 });
+
+$(document).on("contextmenu", function(e) {
+  e.preventDefault();
+});
+
 
  </script>
 <?php include '../footer.php';?>
