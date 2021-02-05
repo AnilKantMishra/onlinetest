@@ -23,61 +23,63 @@ crossorigin="anonymous"></script> -->
 </head>
 
 <body>
-    <?php include_once 'adminheader.php'; ?>
-    <!-- <h1 style="color:white ;font-size:20px;">  Hello  
-<?php echo $name; ?></h1> -->
-    </nav>
+    <?php include_once 'adminheader.php';
+
+    ?>
+
     <div class="container-fluid">
         <table id="table" width="100%" class="table table-bordered display responsive;">
             <thead style="    background-image: linear-gradient(rgba(4, 168, 255, 0.3), rgba(197, 31, 95, 0.3));
 ">
                 <tr style="font-size: 20px;">
                     <th>
-                        Category
+                        Quiz Name
                     </th>
                     <th>
-                        Question
+                        Name
                     </th>
                     <th>
-                        Answer
+                        Total Question
                     </th>
                     <th>
-                        Option1
+                        wrong answer
                     </th>
                     <th>
-                        Option2
+                        correct answer
                     </th>
                     <th>
-                        Option3
+                        Date
                     </th>
-                    <th>
-                        Option4
-                    </th>
+
+
                 </tr>
             </thead>
             <tbody>
                 <?php
                 include_once  '../database/adminoops.php'; ?>
                 <?php
-                $addcat = new admin();
-                $res = $addcat->seequestion();
+                $seeanswer = new admin();
+
+                $res = $seeanswer->seeuseranswer();
                 while ($s = mysqli_fetch_array($res)) {
                 ?>
                     <tr>
                         <td style="font-size: 13px;">
-                            <?php echo $s['cat_name']; ?></td>
+                            <?php echo $s['Quiz Name']; ?></td>
+
                         <td style="font-size: 13px;">
-                            <?php echo $s['question']; ?></td>
+                            <?php echo $s['Examinee Name']; ?></td>
                         <td style="font-size: 13px;">
-                            <?php echo $s['answer']; ?></td>
+                            <?php echo $s['Total Question']; ?></td>
                         <td style="font-size: 13px;">
-                            <?php echo $s['Option1']; ?></td>
+
+                            <?php echo $s['wrong answer']; ?></td>
                         <td style="font-size: 13px;">
-                            <?php echo $s['Option2']; ?></td>
+                            <?php echo $s['correct answer']; ?></td>
                         <td style="font-size: 13px;">
-                            <?php echo $s['Option3']; ?></td>
-                        <td style="font-size: 13px;">
-                            <?php echo $s['Option4']; ?></td>
+                            <?php echo $s['Exam Date']; ?></td>
+
+
                     </tr>
                 <?php
                 }

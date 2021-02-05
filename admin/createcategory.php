@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once  '../database/adminoops.php';
 if (isset($_POST['submit'])) {
   $category = $_POST['category'];

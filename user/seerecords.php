@@ -64,20 +64,20 @@ crossorigin="anonymous"></script> -->
                 while ($s = mysqli_fetch_array($res)) {
                 ?>
                     <tr>
-                        <th style="font-size: 13px;">
-                            <?php echo $s['Quiz Name']; ?></th>
+                        <td style="font-size: 13px;">
+                            <?php echo $s['Quiz Name']; ?></td>
 
-                        <th style="font-size: 13px;">
-                            <?php echo $s['Examinee Name']; ?></th>
-                        <th style="font-size: 13px;">
-                            <?php echo $s['Total Question']; ?></th>
-                        <th style="font-size: 13px;">
+                        <td style="font-size: 13px;">
+                            <?php echo $s['Examinee Name']; ?></td>
+                        <td style="font-size: 13px;">
+                            <?php echo $s['Total Question']; ?></td>
+                        <td style="font-size: 13px;">
 
-                            <?php echo $s['wrong answer']; ?></th>
-                        <th style="font-size: 13px;">
-                            <?php echo $s['correct answer']; ?></th>
-                        <th style="font-size: 13px;">
-                            <?php echo $s['Exam Date']; ?></th>
+                            <?php echo $s['wrong answer']; ?></td>
+                        <td style="font-size: 13px;">
+                            <?php echo $s['correct answer']; ?></td>
+                        <td style="font-size: 13px;">
+                            <?php echo $s['Exam Date']; ?></td>
 
 
                     </tr>

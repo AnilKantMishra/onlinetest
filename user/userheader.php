@@ -8,8 +8,8 @@ if (!isset($_SESSION['name']) || $_SESSION['is_admin'] == "1") {
 ?>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid" style="padding: 15px; font-size:15px">
+<nav class="navbar navbar-inverse" style="padding:10px;height:70px">
+  <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#" style="color:white">CED QUIZ</a>
     </div>
