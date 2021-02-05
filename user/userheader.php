@@ -16,7 +16,7 @@ if (!isset($_SESSION['name']) || $_SESSION['is_admin'] == "1") {
     <ul class="nav navbar-nav" style="margin-left: 20px;">
 
       <li><a href="index.php" style="color:white">HOME</a></li>
-      <li><a href="#" style="color:white">Reviews</a></li>
+      <li><a href="seerecords.php" style="color:white">See Your Details</a></li>
       <li><a href="index.php" style="color:white">Start Test</a></li>
 
 

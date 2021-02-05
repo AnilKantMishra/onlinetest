@@ -109,10 +109,21 @@ class user
 
         return $answer;
     }
+    public function seeuseranswer($name)
+    {
+        $sql = "SELECT `Quiz Name`, `Examinee Name`, `wrong answer`, 
+        `correct answer`,`Total Question`,`Exam Date` FROM `tbl_score` where `Examinee Name`='$name'";
+        $result = $this->con->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }
 // $obj = new user();
 // echo "<pre>";
-// print_r($obj->seeanswerhere());
+// print_r($obj->seeuseranswer("husain"));
 
 ?>
 

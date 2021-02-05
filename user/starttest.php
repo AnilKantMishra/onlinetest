@@ -161,38 +161,18 @@
   }
 </script>
 <script>
-  document.onkeypress = function(event) {
-    event = (event || window.event);
-    if (event.keyCode == 123) {
-      return false;
-    }
-  }
-  document.onmousedown = function(event) {
-    event = (event || window.event);
-    if (event.keyCode == 123) {
-      return false;
-    }
-  }
-  document.onkeydown = function(event) {
-    event = (event || window.event);
-    if (event.keyCode == 123) {
-      return false;
-    }
-  }
-</script>
-<script>
   // for 5 min count down
   function countdown(minutes) {
     var seconds = 60;
     var mins = minutes
 
-    function tick() {
+    function count() {
       var counter = document.getElementById("counter");
       var current_minutes = mins - 1
       seconds--;
       counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
       if (seconds > 0) {
-        setTimeout(tick, 1000);
+        setTimeout(count, 1000);
       } else {
         if (mins > 1) {
           countdown(mins - 1);
@@ -202,7 +182,7 @@
         }
       }
     }
-    tick();
+    count();
   }
   // take min here
   countdown(5);

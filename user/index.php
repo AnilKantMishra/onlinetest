@@ -27,7 +27,7 @@
 <body>
 
   <?php include 'userheader.php'; ?>
-  <div class="container" style="margin-top:-25px">
+  <div class="container" style="margin-top:-20px">
     <img src="../quiz-logo_2728-12.jpg" style="margin-top:-100px;width: 420px;height:420px;float:right">
     <div class="row">
       <h2>The Test</h2>
@@ -39,12 +39,8 @@
     </div>
   </div>
 
-
-
   <div class="container">
     <div class="row">
-
-
       <?php
       include_once '../database/adminoops.php';
       $userlogin = new admin();
@@ -56,10 +52,10 @@
         echo ' <div class="col-sm-4"><br>
                              <div class="card " style="min-height:300px">
                             <div class="card-body">
-                            <h2> Start the Quiz <h2>
+                            <h3> Start the Quiz <h3>
                             <p class="card-text" style="color:red">' . $resultobj['cat_name'] . '</p>
 
-                             <a style="margin-top:20px;font-size:18px" href="starttest.php?id=' . $resultobj['cat_id'] . '&name=' . $resultobj['cat_name'] . '"> START TEST HERE
+                             <a style="margin-top:20px;font-size:18px" href="starttest.php?id=' . $resultobj['cat_id'] . '&name=' . $resultobj['cat_name'] . '"><BR><BR>CLICK HERE TO START TEST 
                             </a> </div> </div> </div>';
       }
 
