@@ -1,30 +1,31 @@
 <?php
 
-include '../database/adminoops.php'; ?><?php
-                                        if (isset($_POST['submit'])) {
-                                            $selectcat = $_POST['selectcat'];
-                                            $Question = $_POST['Question'];
-                                            $Answer = $_POST['Answer'];
-                                            $Option1 = $_POST['option1'];
-                                            $Option2 = $_POST['option2'];
-                                            $Option3 = $_POST['option3'];
-                                            $Option4 = $_POST['option4'];
-                                            //  echo "<br>".$selectcat;
-                                            //  echo "<br>".$Question;
-                                            //  echo "<br>".$Answer;
-                                            //  echo "<br>".$Option1;
-                                            //  echo "<br>".$Option2;
-                                            //  echo "<br>".$Option3;
-                                            //  echo "<br>".$Option4;
-                                            $insertques = new admin();
-                                            $res = $insertques->addquestion($selectcat, $Question, $Answer, $Option1, $Option2, $Option3, $Option4);
-                                            if ($res == 1) {
-                                                echo "<script>   alert('Question Added Successfully')      </script>";
-                                            } else {
-                                                echo "<script>   alert('Sorry!!!!!!!Question not inserted')      </script>";
-                                            }
-                                        }
-                                        ?>
+include '../database/adminoops.php'; ?>
+<?php
+if (isset($_POST['submit'])) {
+    $selectcat = $_POST['selectcat'];
+    $Question = $_POST['Question'];
+    $Answer = $_POST['Answer'];
+    $Option1 = $_POST['option1'];
+    $Option2 = $_POST['option2'];
+    $Option3 = $_POST['option3'];
+    $Option4 = $_POST['option4'];
+    //  echo "<br>".$selectcat;
+    //  echo "<br>".$Question;
+    //  echo "<br>".$Answer;
+    //  echo "<br>".$Option1;
+    //  echo "<br>".$Option2;
+    //  echo "<br>".$Option3;
+    //  echo "<br>".$Option4;
+    $insertques = new admin();
+    $res = $insertques->addquestion($selectcat, $Question, $Answer, $Option1, $Option2, $Option3, $Option4);
+    if ($res == 1) {
+        echo "<script>   alert('Question Added Successfully')      </script>";
+    } else {
+        echo "<script>   alert('Sorry!!!!!!!Question not inserted')      </script>";
+    }
+}
+?>
 <html>
 
 <head>
@@ -119,10 +120,8 @@ include '../database/adminoops.php'; ?><?php
             <br>
             <input type="text" id="Question" name="Question" placeholder="" required>
             <br>
-            <label for="Answer">Answer</label>
-            <br>
-            <input type="text" id="Answer" name="Answer" placeholder="" required>
-            <br>
+
+
             <br>
             <label for="Option">Option1</label>
             <br>
@@ -139,6 +138,25 @@ include '../database/adminoops.php'; ?><?php
             <label for="Option">Option4</label>
             <br>
             <input type="text" id="option4" name="option4" placeholder="" required>
+            <br>
+
+            <label for="Answer">Answer</label>
+            <br>
+            <select class="form-dropdown validate (required)" name="Answer" id="Answer" style="width:330px" data-component="dropdown" area-labelledby="label_3">
+
+                <option value="Option1"> Option 1
+                </option>
+                <option value="Option2"> Option 2
+                </option>
+                <option value="Option3"> Option 3
+                </option>
+                <option value="Option4"> Option 4
+                </option>
+
+            </select>
+
+            <!-- <input type="text" id="Answer" name="Answer" placeholder="" required> -->
+            <br>
             <br>
             <br>
             <input type="submit" name="submit" value="submit">

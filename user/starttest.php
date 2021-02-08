@@ -55,11 +55,11 @@
         echo '
 <div class="tab">
 <h3>'  . $row['question'] . '</h3>
-<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" ' . $row['Option1'] . '"required
+<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" Option1"  required
 >&nbsp; ' . $row['Option1'] . '<br>
-<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" ' . $row['Option2'] . '"required>&nbsp; ' . $row['Option2'] . '<br>
-<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" ' . $row['Option3'] . '"required>&nbsp; ' . $row['Option3'] . '<br>
-<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" ' . $row['Option4'] . '"required>&nbsp; ' . $row['Option4'] . '<br>
+<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" Option2" required>&nbsp; ' . $row['Option2'] . '<br>
+<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" Option3"  required>&nbsp; ' . $row['Option3'] . '<br>
+<input  type="radio" id="#txtInput" name="' . $row['id'] . '" value=" Option4 " required>&nbsp; ' . $row['Option4'] . '<br>
 </div>
 </div>
 ';

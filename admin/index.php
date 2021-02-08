@@ -14,10 +14,8 @@
 <?php include 'adminheader.php'; ?>
 
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
     <div class="container-fluid">
         <img src="../quiz-logo_2728-12.jpg" style="width: 400px;height:450px;float:left">
         <br>
@@ -45,8 +43,8 @@
             <a href="seeuserscore.php" target="_blank" style="color:white; text-decoration:none;">See User's Scorecard</a>
         </button>
     </div>
-    <br>
+    <?php include '../footer.php'; ?>
 </body>
-<?php include '../footer.php'; ?>
+
 
 </html>

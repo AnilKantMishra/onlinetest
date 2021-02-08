@@ -29,8 +29,7 @@ crossorigin="anonymous"></script> -->
 
     <div class="container-fluid">
         <table id="table" width="100%" class="table table-bordered display responsive;">
-            <thead style="    background-image: linear-gradient(rgba(4, 168, 255, 0.3), rgba(197, 31, 95, 0.3));
-">
+            <thead style="    background-image: linear-gradient(rgba(4, 168, 255, 0.3), rgba(197, 31, 95, 0.3));">
                 <tr style="font-size: 20px;">
                     <th>
                         Quiz Name

@@ -42,14 +42,19 @@
       $count = 0;
       include '../database/useroops.php';
       $score = new user();
-      //  echo "<pre>";
-      //  print_r($_REQUEST);
+
+      // echo "<pre>" . "user";
+      // print_r($_REQUEST);
+
+
       foreach ($_REQUEST as $key => $value) {
         $value = trim($value);
-        // echo $key."-".$value."-";
-        // echo $correctanswer."<br>";
-        // echo $value."<br>";
+
+
+        echo $key . "-" . $value . "<br>";
+
         $correctanswer = $score->answermatch($key);
+        echo $correctanswer . "<br>";
         // $answer =   $correctanswer->fetch_assoc();
         if ($value == $correctanswer) {
           $count = $count + 1;

@@ -6,11 +6,13 @@ class admin
 
     public $con;
 
+
     public function __construct()
     {
         $dbcon = new db_con();
         $this->con = $dbcon->createConnection();
     }
+
 
     public function addquestion($selectcat, $Question, $Answer, $Option1, $Option2, $Option3, $Option4)
     {
@@ -22,6 +24,7 @@ class admin
             return 0;
         }
     }
+
 
     public function addcategory($category)
     {
@@ -35,6 +38,7 @@ class admin
         }
     }
 
+
     public function nav()
     {
         $sql = "SELECT * FROM `tbl_category` ";
@@ -46,6 +50,8 @@ class admin
             return false;
         }
     }
+
+
     public function seeuser()
     {
         $sql = "SELECT name,email,password FROM `tbl_user` WHERE is_admin=0 ";
@@ -58,6 +64,7 @@ class admin
         }
     }
 
+
     public function categoryshowhere()
     {
         $sql = "SELECT  * FROM `tbl_category` ";
@@ -69,6 +76,8 @@ class admin
             return false;
         }
     }
+
+
     public function seequestion()
     {
         $sql = "SELECT cat_name,question,answer,Option1,Option2,Option3,Option4 From tbl_category tbl_category RIGHT JOIN 
@@ -80,6 +89,8 @@ class admin
             return false;
         }
     }
+
+
     public function seeuseranswer()
     {
         $sql = "SELECT `Quiz Name`, `Examinee Name`, `wrong answer`, 

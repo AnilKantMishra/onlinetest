@@ -27,6 +27,7 @@ class user
         }
     }
 
+
     public function login($email, $password)
     {
         $sql = "SELECT * FROM tbl_user where email='$email' AND password='$password'";
@@ -51,6 +52,7 @@ class user
         }
     }
 
+
     public function questionshow($id)
     {
 
@@ -67,6 +69,7 @@ class user
             return false;
         }
     }
+
 
     public function answermatch($id)
     {
@@ -86,8 +89,6 @@ class user
     }
 
 
-
-
     public  function submit($quizname, $username, $res, $count, $question)
     {
         $insertanswer = "INSERT INTO `tbl_score`(`Quiz Name`,`Examinee Name`, `wrong answer`, `correct answer`,`Total Question`) 
@@ -99,6 +100,7 @@ class user
         }
     }
 
+
     public function seeanswerhere()
     {
         $sql = "SELECT `Quiz Name`, `Examinee Name`, `wrong answer`, 
@@ -109,6 +111,8 @@ class user
 
         return $answer;
     }
+
+
     public function seeuseranswer($name)
     {
         $sql = "SELECT `Quiz Name`, `Examinee Name`, `wrong answer`, 
